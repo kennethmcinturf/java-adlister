@@ -8,6 +8,9 @@ import java.io.IOException;
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getSession().getAttribute("login") == null){
+            request.getSession().setAttribute("login", false);
+        }
         Boolean isAdmin = (Boolean) request.getSession().getAttribute("login");
         if (isAdmin) {
             response.sendRedirect("/profile");
