@@ -1,3 +1,5 @@
+package com.codeup.adlister.dao;
+
 class ConfigThis {
 
     private String Url = "jdbc:mysql://localhost/adlister_db?serverTimezone=UTC&useSSL=false";
