@@ -55,7 +55,6 @@ public class MySQLAdsDao implements Ads {
         String adUserIdString = Long.toString(adUserId);
         String query = "INSERT INTO ads(user_id, title, description) VALUES (" + "'" + adUserIdString + "'," +
                 "'" + adTitle + "'," +  "'" + adDescription + "'" + ")";
-        System.out.println(query);
         try {
             Statement stmt = connection.createStatement();
             stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
@@ -67,13 +66,5 @@ public class MySQLAdsDao implements Ads {
             e.printStackTrace();
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        Ads ad = new MySQLAdsDao(new ConfigThis());
-        List<Ad> ads = ad.all();
-        for (Ad ad1 : ads){
-            System.out.println(ad1.getDescription());
-        }
     }
 }

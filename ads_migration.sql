@@ -6,8 +6,8 @@ use adlister_db;
 
 CREATE table users(
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  username VARCHAR(50) not null,
-  email VARCHAR(100),
+  username VARCHAR(50) not null unique ,
+  email VARCHAR(100) not null unique ,
   password varchar(100) not null,
   PRIMARY KEY (id)
 );
