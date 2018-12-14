@@ -72,5 +72,11 @@ public class MySQLUsersDao implements Users {
         User findUsername = mDao.findByUsername(username);
         System.out.println(findUsername.getUsername());
         System.out.println(findUsername.getEmail());
+
+        User user = new User();
+        user.setUsername("KC");
+        user.setPassword("kc120892");
+        user.setEmail("kc@email.com");
+        System.out.println(mDao.insert(user));
     }
 }
